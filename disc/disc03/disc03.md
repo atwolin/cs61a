@@ -163,7 +163,7 @@ def sevens(n, k):
 def has_seven(n):
     if n == 0:
         return False
-    else if n % 10 == 7:
+    elif n % 10 == 7:
         return True
     else:
         return has_seven(n // 10)
