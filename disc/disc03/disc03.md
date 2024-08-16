@@ -153,15 +153,17 @@ def sevens(n, k):
             return who
         "*** YOUR CODE HERE ***"
         if (has_seven(i)):
-            f(i + 1, who + direction, -direction)
+            next_person = (who - direction) // k if ((who + direction) != 0) else 5
+            return f(i + 1, next_person, -direction)
         else:
-            f(i + 1, who + direction, direction)
+            next_person = (who + direction) // k if ((who + direction) != 0) else 5
+            return f(i + 1, next_person, direction)
     return f(1, 1, 1)
 
 def has_seven(n):
     if n == 0:
         return False
-    elif n % 10 == 7:
+    else if n % 10 == 7:
         return True
     else:
         return has_seven(n // 10)
